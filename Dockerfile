@@ -16,12 +16,12 @@ FROM debian:buster
 
 LABEL maintainer="tux@md.freifunk.net"
 
-COPY --from=install /tmp/bind /etc/bind
-
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     bind9 \
     && rm -rf /var/lib/apt/lists/*
+
+COPY --from=install /tmp/bind /etc/bind
 
 EXPOSE 53/udp 53/tcp
 
