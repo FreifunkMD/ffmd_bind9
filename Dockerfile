@@ -25,4 +25,4 @@ COPY --from=install /tmp/bind /etc/bind
 
 EXPOSE 53/udp 53/tcp
 
-CMD ["/usr/sbin/named"]
+CMD ["/usr/sbin/named", "-f"]
