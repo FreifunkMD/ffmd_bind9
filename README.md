@@ -6,6 +6,6 @@ Arguments:
 
 Build with as
 ```
-  docker build --build-arg GITREPO=<git uri> --buildarg GITREF=<branch or tag>
+  docker build --build-arg GITREPO=<git uri> --build-arg GITREF=<branch or tag>
 ```
 
