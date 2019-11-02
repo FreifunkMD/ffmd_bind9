@@ -3,6 +3,10 @@ FROM debian:buster AS install
 ARG GITREPO
 ARG GITREF=master
 
+# Apt-proxy config
+COPY detect-apt-proxy.sh /usr/local/bin/
+COPY 01proxy /etc/apt/apt.conf.d
+
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     git \
