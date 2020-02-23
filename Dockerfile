@@ -4,7 +4,7 @@ ARG GITREPO
 ARG GITREF=master
 
 # Apt-proxy config
-COPY detect-apt-proxy.sh /usr/local/bin/
+COPY apt-proxy-detect.sh /usr/local/lib/
 COPY 01proxy /etc/apt/apt.conf.d
 
 # Keep apt cache directories!
