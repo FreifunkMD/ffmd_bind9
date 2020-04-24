@@ -1,0 +1,12 @@
+---
+version: '3'
+services:
+  bind:
+    image: ffmd/named
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+    volumes:
+      # https://github.com/FreifunkMD/ffmd_bind9_cfg_ffmd
+      - ./config:/etc/bind:ro
+    restart: unless-stopped
